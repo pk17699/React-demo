@@ -1,0 +1,79 @@
+// inside index.js in src folder
+// method-1, rendering react element using DOM
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+var style = {
+backgroundColor: 'ornage',
+color: 'white',
+fontFamily: 'Arial'
+}
+
+const title = React.createElement(
+'h1',
+{id: 'title', className: 'header', style: style},
+'Hello world' //child element
+)
+
+ReactDOM.render(
+title,
+document.getElementById('root')
+)
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+var style = {
+backgroundColor: 'ornage',
+color: 'white',
+fontFamily: 'Arial'
+}
+
+const title = React.createElement(
+'ul',
+{id: 'title', className: 'header', style: style},
+React.createElement(
+'li',
+{},
+'item on our list'
+)
+)
+
+ReactDOM.render(
+title,
+document.getElementById('root')
+)
+
+// method-2, 
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+var style = {
+backgroundColor: 'ornage',
+color: 'white',
+fontFamily: 'Arial'
+}
+
+ReactDOM.render(
+<div style={style}>
+<h1>hello world</h1>
+<p>we are glad you are here</p>
+</div>,
+document.getElementById('root')
+)
+
+// method-3
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+class Message extends React.Component{
+render(){
+return (
+<div><h1>Hello world</h1></div>
+)
+}
+}
+
+ReactDOM.render(<Message/>, document.getElementById('root'))
